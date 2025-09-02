@@ -1,0 +1,101 @@
+cliente_id,nombre,edad,provincia
+1,Ester,19,Las Palmas
+2,Ale,33,Palma
+3,Mayte,26,Sevilla
+4,Blas,61,Vitoria
+5,Maxi,23,Granada
+6,Alicia,45,Barcelona
+7,Maxi,19,Valencia
+8,Baltasar,31,Palma
+9,Nidia,50,Elche
+10,Fulgencio,19,Vitoria
+11,Artemio,30,Vitoria
+12,Olivia,44,Palma
+13,Guadalupe,46,Granada
+14,Eduardo,35,Madrid
+15,Edelmira,28,Vigo
+16,Yolanda,39,Las Palmas
+17,Mireia,27,Murcia
+18,Adora,39,Sevilla
+19,Maxi,23,Valladolid
+20,Salud,24,Córdoba
+21,Benigna,40,Elche
+22,Cirino,34,Barcelona
+23,Yolanda,64,Gijón
+24,Saturnino,52,Sevilla
+25,Clementina,42,Valencia
+26,Anastasia,53,Bilbao
+27,Elodia,58,Elche
+28,Estela,41,Granada
+29,Eloísa,30,Valencia
+30,Estrella,20,Palma
+31,Paca,36,Valencia
+32,Enrique,32,Sevilla
+33,Eladio,42,Las Palmas
+34,Humberto,47,Córdoba
+35,Ainoa,28,Córdoba
+36,Custodio,40,Murcia
+37,Mario,60,Las Palmas
+38,Hernán,62,Valencia
+39,Trini,56,Málaga
+40,Lucía,52,Palma
+41,Paulino,28,Gijón
+42,Angelina,42,Las Palmas
+43,Loreto,58,Vitoria
+44,Nadia,32,Alicante
+45,Soraya,21,Palma
+46,Alexandra,20,Alicante
+47,Ricardo,43,Las Palmas
+48,Melchor,22,Murcia
+49,Alma,54,Alicante
+50,Hilario,31,Hospitalet
+51,Pili,43,Gijón
+52,Nando,27,Las Palmas
+53,Sara,26,Palma
+54,Visitación,65,Vitoria
+55,Conrado,52,Las Palmas
+56,Manuelita,65,Granada
+57,Fortunato,45,Granada
+58,Eloy,43,Córdoba
+59,Marc,32,Zaragoza
+60,Ramiro,50,Hospitalet
+61,Salvador,23,Barcelona
+62,Severo,25,Zaragoza
+63,Guadalupe,58,Málaga
+64,Saturnino,61,Vigo
+65,Lisandro,56,Valencia
+66,Rosario,42,Valladolid
+67,Telmo,56,Gijón
+68,Maximiano,51,Las Palmas
+69,Marcio,53,Madrid
+70,Pía,61,Sevilla
+71,Cesar,61,Vitoria
+72,Arturo,35,Alicante
+73,Fátima,25,Bilbao
+74,Benita,45,Málaga
+75,Trinidad,47,Madrid
+76,Florentino,64,Las Palmas
+77,Joaquina,50,Málaga
+78,Manuel,50,Sevilla
+79,Damián,58,Bilbao
+80,Eloísa,58,La Coruña
+81,Miguel,56,Murcia
+82,Inocencio,27,Córdoba
+83,Diego,28,Vitoria
+84,Vicente,51,Madrid
+85,Domitila,56,Alicante
+86,María Jesús,49,Madrid
+87,Abilio,25,Córdoba
+88,Jessica,37,Palma
+89,Mirta,21,Palma
+90,Agustín,54,Valencia
+91,Conrado,23,Hospitalet
+92,Hilda,22,Vitoria
+93,Raúl,26,Zaragoza
+94,Eloísa,60,Hospitalet
+95,Ximena,53,Málaga
+96,Azahar,34,La Coruña
+97,Augusto,56,Vigo
+98,Vinicio,31,Vitoria
+99,Jordana,64,Murcia
+100,Régulo,63,Bilbao

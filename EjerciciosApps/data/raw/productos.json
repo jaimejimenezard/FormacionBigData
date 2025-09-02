@@ -1,0 +1,102 @@
+[
+  {
+    "producto_id": 101,
+    "nombre": "Consequatur",
+    "categoria": "Deporte"
+  },
+  {
+    "producto_id": 102,
+    "nombre": "Aliquid",
+    "categoria": "Hogar"
+  },
+  {
+    "producto_id": 103,
+    "nombre": "Cupiditate",
+    "categoria": "Electrónica"
+  },
+  {
+    "producto_id": 104,
+    "nombre": "Incidunt",
+    "categoria": "Accesorios"
+  },
+  {
+    "producto_id": 105,
+    "nombre": "Magnam",
+    "categoria": "Accesorios"
+  },
+  {
+    "producto_id": 106,
+    "nombre": "Accusamus",
+    "categoria": "Electrónica"
+  },
+  {
+    "producto_id": 107,
+    "nombre": "Illum",
+    "categoria": "Muebles"
+  },
+  {
+    "producto_id": 108,
+    "nombre": "Laboriosam",
+    "categoria": "Electrónica"
+  },
+  {
+    "producto_id": 109,
+    "nombre": "Quos",
+    "categoria": "Deporte"
+  },
+  {
+    "producto_id": 110,
+    "nombre": "Doloremque",
+    "categoria": "Deporte"
+  },
+  {
+    "producto_id": 111,
+    "nombre": "Architecto",
+    "categoria": "Accesorios"
+  },
+  {
+    "producto_id": 112,
+    "nombre": "Modi",
+    "categoria": "Deporte"
+  },
+  {
+    "producto_id": 113,
+    "nombre": "Inventore",
+    "categoria": "Accesorios"
+  },
+  {
+    "producto_id": 114,
+    "nombre": "Vero",
+    "categoria": "Electrónica"
+  },
+  {
+    "producto_id": 115,
+    "nombre": "Inventore",
+    "categoria": "Electrónica"
+  },
+  {
+    "producto_id": 116,
+    "nombre": "Culpa",
+    "categoria": "Electrónica"
+  },
+  {
+    "producto_id": 117,
+    "nombre": "Officiis",
+    "categoria": "Accesorios"
+  },
+  {
+    "producto_id": 118,
+    "nombre": "Neque",
+    "categoria": "Electrónica"
+  },
+  {
+    "producto_id": 119,
+    "nombre": "Enim",
+    "categoria": "Electrónica"
+  },
+  {
+    "producto_id": 120,
+    "nombre": "Atque",
+    "categoria": "Muebles"
+  }
+]

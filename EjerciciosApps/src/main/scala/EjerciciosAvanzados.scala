@@ -2,6 +2,10 @@ import org.apache.spark.sql.{SparkSession, DataFrame}
 import org.apache.spark.sql.functions._
 
 object EjerciciosAvanzados {
+  def iniciarDF(spark: SparkSession): DataFrame = {
+    spark.read.option("header", "true").csv("data/raw/googleapps.csv")
+  }
+
   def ejercicio1(df: DataFrame): DataFrame = {
     println("Life Made WI-FI Touchscreen Photo Frame eliminado.")
     df.filter(col("App") =!= "Life Made WI-FI Touchscreen Photo Frame")
