@@ -4,20 +4,56 @@ import org.apache.spark.sql.functions._
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.storage.StorageLevel
 
-object PracticoCompleto {
+object PracticoCompleto  {
 
-  def ejercicio1(df: DataFrame): DataFrame = {
+  def execute()(implicit spark: SparkSession): Unit = {
+    val (pedidosDF, productosDF, clientesDF) = PracticoCompleto.ejercicio1(spark)
+
+    PracticoCompleto.ejercicio2(pedidosDF, productosDF, clientesDF)
+    val (pedidosDF_updated, clientesDF_updated) = PracticoCompleto.ejercicio3(pedidosDF, clientesDF)
+
+    PracticoCompleto.ejercicio4(pedidosDF_updated, clientesDF_updated, productosDF)
+    PracticoCompleto.ejercicio5(spark, pedidosDF_updated, productosDF, clientesDF_updated)
+    PracticoCompleto.ejercicio6(pedidosDF_updated, clientesDF_updated, productosDF)
+    PracticoCompleto.ejercicio7(pedidosDF_updated, productosDF)
+    PracticoCompleto.ejercicio8(pedidosDF_updated)
+    PracticoCompleto.ejercicio9(pedidosDF_updated, clientesDF_updated)
+  }
+
+  def ejercicio1(spark: SparkSession): (DataFrame, DataFrame, DataFrame) = {
+    val pedidosDF = spark.read
+      .option("multiline", "true")
+      .json("data/raw/pedidos.json")
+
+    val productosDF = spark.read
+      .option("multiline", "true")
+      .json("data/raw/productos.json")
+
+    val clientesDF = spark.read
+      .option("header", "true")
+      .csv("data/raw/clientes.csv")
+
+    (pedidosDF, productosDF, clientesDF)
+  }
+
+  def ejercicio2(ped_df: DataFrame, pro_df: DataFrame, cli_df: DataFrame): Unit = {
+    ped_df.show()
+    pro_df.show()
+    cli_df.show()
+  }
+
+  def ejercicio3(ped_df: DataFrame, cli_df: DataFrame) : (DataFrame, DataFrame) = {
     println("Columna precio total creada.")
-    df.withColumn("precio_total", when(col("descuento").isNotNull, bround(col("cantidad")*col("precio_unitario")*col("descuento"),2))
+    val ped_df_new = ped_df.withColumn("precio_total", when(col("descuento").isNotNull, bround(col("cantidad")*col("precio_unitario")*col("descuento"),2))
       .otherwise(bround(col("cantidad")*col("precio_unitario"),2)))
-  }
 
-  def ejercicio2(df: DataFrame): DataFrame = {
     println("Columna provincia estandarizada.")
-    df.withColumn("provincia", upper(col("provincia")))
+    val cli_df_new = cli_df.withColumn("provincia", upper(col("provincia")))
+
+    (ped_df_new, cli_df_new)
   }
 
-  def ejercicio3(ped_df: DataFrame, cli_df: DataFrame, pro_df: DataFrame): Unit = {
+  def ejercicio4(ped_df: DataFrame, cli_df: DataFrame, pro_df: DataFrame): Unit = {
     // Determina cuánto ha gastado cada cliente en total.
     val totalGastosDF = ped_df
       .groupBy(col("cliente_id"))
@@ -46,7 +82,7 @@ object PracticoCompleto {
     prodCategoriaDF.show(60)
   }
 
-  def ejercicio4(spark: SparkSession, ped_df: DataFrame, pro_df: DataFrame, cli_df: DataFrame): Unit = {
+  def ejercicio5(spark: SparkSession, ped_df: DataFrame, pro_df: DataFrame, cli_df: DataFrame): Unit = {
     ped_df.createOrReplaceTempView("pedidos")
     ped_df.createOrReplaceTempView("productos")
     cli_df.createOrReplaceTempView("clientes")
@@ -91,7 +127,7 @@ object PracticoCompleto {
     resultado5.show()
   }
 
-  def ejercicio5(ped_df: DataFrame, cli_df: DataFrame, pro_df: DataFrame): Unit = {
+  def ejercicio6(ped_df: DataFrame, cli_df: DataFrame, pro_df: DataFrame): Unit = {
     // Ejercicio 1
     val ventasPorProducto = ped_df
       .join(pro_df, pro_df("producto_id") === ped_df("producto_id"))
@@ -156,7 +192,7 @@ object PracticoCompleto {
       .save("file:///C:/Users/jaime.jimenez/IdeaProjects/EjerciciosApps/data/results/historial_ventas")
   }
 
-  def ejercicio6(ped_df: DataFrame, pro_df: DataFrame): Unit = {
+  def ejercicio7(ped_df: DataFrame, pro_df: DataFrame): Unit = {
     // Estrategia de almacenamiento
     ped_df.persist(StorageLevel.MEMORY_ONLY)
 
@@ -175,7 +211,7 @@ object PracticoCompleto {
 
   }
 
-  def ejercicio7(df: DataFrame): Unit = {
+  def ejercicio8(df: DataFrame): Unit = {
     println(s"Número de particiones originales: ${df.rdd.getNumPartitions}")
 
     val t1 = System.nanoTime()
@@ -201,7 +237,7 @@ object PracticoCompleto {
 
   }
 
-  def ejercicio8(ped_df: DataFrame, cli_df: DataFrame): Unit = {
+  def ejercicio9(ped_df: DataFrame, cli_df: DataFrame): Unit = {
     val df1 = ped_df
       .join(cli_df, ped_df("cliente_id")===cli_df("cliente_id"))
       .withColumn("producto_id", col("producto_id").cast("int"))
