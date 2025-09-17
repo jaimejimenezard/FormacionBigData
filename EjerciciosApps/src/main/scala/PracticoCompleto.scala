@@ -146,7 +146,7 @@ object PracticoCompleto  {
       .mode("overwrite")
       .option("compression", "none")
       .option("header", "true")
-      .save("file:///C:/Users/jaime.jimenez/IdeaProjects/EjerciciosApps/data/results/ranking_categoria")
+      .save("data/results/ranking_categoria")
 
     // ejercicio2
     val ventasPorCliente = ped_df
@@ -169,7 +169,7 @@ object PracticoCompleto  {
     acumuladoDF.write.format("csv")
       .mode("overwrite")
       .option("compression", "none")
-      .save("file:///C:/Users/jaime.jimenez/IdeaProjects/EjerciciosApps/data/results/dinero_mes")
+      .save("data/results/dinero_mes")
 
     // ejercicio3
     val pedidosCliente = ped_df.select("cliente_id", "pedido_id", "fecha", "precio_total")
@@ -189,7 +189,7 @@ object PracticoCompleto  {
     historialDF.write.format("csv")
       .mode("overwrite")
       .option("compression", "none")
-      .save("file:///C:/Users/jaime.jimenez/IdeaProjects/EjerciciosApps/data/results/historial_ventas")
+      .save("data/results/historial_ventas")
   }
 
   def ejercicio7(ped_df: DataFrame, pro_df: DataFrame): Unit = {
