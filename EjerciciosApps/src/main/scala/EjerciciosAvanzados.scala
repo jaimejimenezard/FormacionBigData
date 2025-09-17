@@ -2,6 +2,19 @@ import org.apache.spark.sql.{SparkSession, DataFrame}
 import org.apache.spark.sql.functions._
 
 object EjerciciosAvanzados {
+  def execute()(implicit spark: SparkSession): Unit = {
+    val appsDF = EjerciciosAvanzados.iniciarDF(spark)
+
+    appsDF.show()
+    val appsDF_2 = EjerciciosAvanzados.ejercicio1(appsDF)
+    val appsDF_3 = EjerciciosAvanzados.ejercicio2(appsDF_2)
+    val appsDF_4 = EjerciciosAvanzados.ejercicio3(appsDF_3)
+    val appsDF_5 = EjerciciosAvanzados.ejercicio4(appsDF_4)
+    val appsDF_6 = EjerciciosAvanzados.ejercicio5(appsDF_5)
+    EjerciciosAvanzados.ejercicio6(appsDF_6)
+    EjerciciosAvanzados.ejercicio7(appsDF_6)
+  }
+
   def iniciarDF(spark: SparkSession): DataFrame = {
     spark.read.option("header", "true").csv("data/raw/googleapps.csv")
   }

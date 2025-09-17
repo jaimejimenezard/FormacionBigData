@@ -28,20 +28,9 @@ object Main {
       print(enunciado)
       ans = StdIn.readInt()
       ans match {
-
         // Ejercicios avanzados
         case 1 => {
-          var appsDF = spark.read.option("header", "true").csv("data/raw/googleapps.csv")
-
-           appsDF.show()
-           appsDF = EjerciciosAvanzados.ejercicio1(appsDF)
-           appsDF = EjerciciosAvanzados.ejercicio2(appsDF)
-           appsDF = EjerciciosAvanzados.ejercicio3(appsDF)
-           appsDF = EjerciciosAvanzados.ejercicio4(appsDF)
-           appsDF = EjerciciosAvanzados.ejercicio5(appsDF)
-           EjerciciosAvanzados.ejercicio6(appsDF)
-           EjerciciosAvanzados.ejercicio7(appsDF)
-           ans=11
+          EjerciciosAvanzados.execute()
         }
 
         // Prático Completo
